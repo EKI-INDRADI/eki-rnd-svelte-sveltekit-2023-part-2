@@ -12,9 +12,9 @@ lerna-debug.log*
 /**/node_modules
 /**/dist
 /**/dist-ssr
-/contact-list/node_modules
-/contact-list/dist
-/contact-list/dist-ssr
+/booklovers/node_modules
+/booklovers/dist
+/booklovers/dist-ssr
 *.local
 
 # Editor directories and files

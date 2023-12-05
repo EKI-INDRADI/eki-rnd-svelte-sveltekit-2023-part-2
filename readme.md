@@ -17,6 +17,36 @@
 
 </details>
 
+<details>
+  <summary>EKI-20231205-049-Project-Setup</summary>
+
+```sh
+cd eki-rnd-svelte-sveltekit-2023-part-2
+npm create svelte@latest booklovers
+
+Which Svelte app template?
+- Sekelton project
+
+Add type checking with TypeScript?
+- Yes, using Javascript with JSDoc comments
+
+Select additional options (use arrow keys/space bar)
+
+│  ◻ Add ESLint for code linting
+│  ◼ Add Prettier for code formatting
+│  ◻ Add Playwright for browser testing
+│  ◻ Add Vitest for unit testing
+│  ◻ Try out Svelte 5 beta
+
+cd booklovers
+npm install
+npm run dev -- --open
+
+```
+
+</details>
+
+
 
 ## EKI INDRADI
 
