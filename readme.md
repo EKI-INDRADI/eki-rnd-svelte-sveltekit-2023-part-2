@@ -47,6 +47,60 @@ npm run dev -- --open
 </details>
 
 
+<details>
+  <summary>EKI-20231205-050-Firebase-Setup</summary>
+
+```sh
+
+firebase.google.com -> go to console -> create project 
+-> "booklovers" 
+-> Enable Google Analytics for this project ->
+-> Configure Google Analytics -> Analytics location -> "indonesia"
+-> use the default setting for sharing Google Analytics data
+-> accept
+
+Authentication -> Get Started 
+-> Sign-in method
+-> Native providers 
+-> Email/Password -> Enable
+-> Email/Password -> Email link (passwordless sign-in) -> Disable
+
+Authentication ->
+-> Add new provider
+-> Additional providers
+-> Google -> Enable
+-> "SECRET DETAIL IN NOTEPAD"
+
+Build -> Firestore Database
+-> Create Database
+-> Database ID : (default)
+-> Location : asia-southeast2 (Jakarta)
+-> Start in production mode
+
+Build -> Storage
+-> Start in production mode
+-> Cloud Storage location : asia-southeast2
+-> Done
+
+Project Overview -> Project settings
+-> Service accounts
+-> Firebase Admin SDK
+-> Admin SDK configuration snippet : Nodejs
+-> Copy code paste to notepad  (save)
+-> Generate new private key [json]  (save)
+
+Project Overview -> Project settings
+-> Service accounts
+-> Firebase Admin SDK
+-> Manage service account permission (untuk melihat account)
+
+after Generate new private key (json) copy to /booklovers/src/lib/firebase/firebase-secrets.server.json
+
+```
+
+</details>
+
+
 
 ## EKI INDRADI
 
