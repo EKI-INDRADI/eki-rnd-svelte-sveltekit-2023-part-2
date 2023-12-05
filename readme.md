@@ -6,7 +6,6 @@
 <details>
   <summary>EKI-20231205-048-INTRO</summary>
 
-
 ```sh
 
 # ex :
