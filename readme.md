@@ -96,6 +96,9 @@ Project Overview -> Project settings
 
 after Generate new private key (json) copy to /booklovers/src/lib/firebase/firebase-secrets.server.json
 
+add .gitignore
+src/lib/firebase/firebase-secrets.server.json
+
 ```
 
 </details>
