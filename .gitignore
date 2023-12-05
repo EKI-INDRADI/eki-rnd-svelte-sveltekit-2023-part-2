@@ -15,6 +15,7 @@ lerna-debug.log*
 /booklovers/node_modules
 /booklovers/dist
 /booklovers/dist-ssr
+/booklovers/src/lib/firebase/firebase-secrets.server.json
 *.local
 
 # Editor directories and files
