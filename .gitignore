@@ -17,7 +17,6 @@ lerna-debug.log*
 /booklovers/dist-ssr
 /booklovers/src/lib/firebase/firebase-secrets.server.json
 *.local
-
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
