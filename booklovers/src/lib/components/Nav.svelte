@@ -1,10 +1,14 @@
 <!---
-Create a variable named isLoggedIn that will be set to true or false.  Then use it to create an if statement in the Svelte template that shows logged navigation if isLoggedIn is true or non-logged-in navigation if isLoggedIn is false.
+Make the mobile navigation work by toggling the class show to the div that has 
+the navbar-collapse when the navba-toggler button is clicked
 -->
-
 
 <script>
 	let isLoggedIn = false
+	let isOpen = false;
+	function toggleMenu() {
+		isOpen = !isOpen;
+	}
 </script>
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -18,10 +22,11 @@ Create a variable named isLoggedIn that will be set to true or false.  Then use 
 			aria-controls="navbarNav"
 			aria-expanded="false"
 			aria-label="Toggle navigation"
+			on:click={toggleMenu}
 		>
 			<span class="navbar-toggler-icon" />
 		</button>
-		<div class="collapse navbar-collapse" id="navbarNav">
+		<div class:show={isOpen} class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav">
 				{#if isLoggedIn}
                 <!-- Logged In -->
