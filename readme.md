@@ -104,6 +104,27 @@ src/lib/firebase/firebase-secrets.server.json
 </details>
 
 
+<details>
+  <summary>EKI-20231206-051-Bootstrap-Navbar</summary>
+
+```sh
+
+npm i -D bootstrap@v5.3.2
+
+```
+
+Nav.svelte
+```svelte
+copy from 
+<!-- https://github.com/phptuts/booklovers -->
+<!-- https://pastebin.com/raw/04na96qx -->
+```
+
+</details>
+
+
+
+
 
 ## EKI INDRADI
 
