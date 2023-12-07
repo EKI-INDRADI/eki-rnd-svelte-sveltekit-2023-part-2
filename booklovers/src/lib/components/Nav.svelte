@@ -4,16 +4,25 @@ the navbar-collapse when the navba-toggler button is clicked
 -->
 
 <script>
-	let isLoggedIn = false
+	import { page } from '$app/stores';
+	let isLoggedIn = false;
 	let isOpen = false;
 	function toggleMenu() {
 		isOpen = !isOpen;
 	}
+	/*
+	Make the active appear on the link when the user navigates
+	You will be able to test this out with the about page.
+
+	buat link active clicked
+	*/
+	// console.log($page.url)
+	// console.log($page.url.pathname)
 </script>
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
 	<div class="container-fluid">
-		<a class="navbar-brand" href="/" >Book Lover</a>
+		<a class="navbar-brand" href="/">Book Lover</a>
 		<button
 			class="navbar-toggler"
 			type="button"
@@ -29,39 +38,49 @@ the navbar-collapse when the navba-toggler button is clicked
 		<div class:show={isOpen} class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav">
 				{#if isLoggedIn}
-                <!-- Logged In -->
-				<li class="nav-item">
-					<a class="nav-link" aria-current="page" href="/">Home</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="/add">Add Book</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="/profile">Profile</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="/about">About</a>
-				</li>
-				<li class="nav-item">
-					<span class="nav-link">Logout</span>
-				</li>
-                <!-- /Logged In -->
+					<!-- Logged In -->
+					<li class="nav-item">
+						<a
+							class:active={$page.url.pathname === '/'}
+							class="nav-link"
+							aria-current="page"
+							href="/">Home</a
+						>
+					</li>
+					<li class="nav-item">
+						<a class:active={$page.url.pathname === '/add'} class="nav-link" href="/add">Add Book</a
+						>
+					</li>
+					<li class="nav-item">
+						<a class:active={$page.url.pathname === '/profile'} class="nav-link" href="/profile"
+							>Profile</a
+						>
+					</li>
+					<li class="nav-item">
+						<a class:active={$page.url.pathname === '/about'} class="nav-link" href="/about"
+							>About</a
+						>
+					</li>
+					<li class="nav-item">
+						<span class:active={$page.url.pathname === '/logout'} class="nav-link">Logout</span>
+					</li>
+					<!-- /Logged In -->
 				{:else}
-				<!-- Not Logged In -->
-				<li class="nav-item">
-					<a class="nav-link" aria-current="page" href="/">Home</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="/about">About</a>
-				</li>
+					<!-- Not Logged In -->
+					<li class="nav-item">
+						<a class:active={$page.url.pathname === '/'} class="nav-link" aria-current="page" href="/">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class:active={$page.url.pathname === '/about'}  class="nav-link" href="/about">About</a>
+					</li>
 
-				<li class="nav-item">
-					<a class="nav-link" href="/login">Login</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="/signup">Sign Up</a>
-				</li>
-                <!-- /Not Logged In -->
+					<li class="nav-item">
+						<a class:active={$page.url.pathname === '/login'} class="nav-link" href="/login">Login</a>
+					</li>
+					<li class="nav-item">
+						<a class:active={$page.url.pathname === '/signup'} class="nav-link" href="/signup">Sign Up</a>
+					</li>
+					<!-- /Not Logged In -->
 				{/if}
 			</ul>
 		</div>
