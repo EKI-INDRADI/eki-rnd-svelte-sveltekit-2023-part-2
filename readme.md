@@ -135,6 +135,73 @@ copy from
 </details>
 
 
+<details>
+  <summary>EKI-20231216-055-Initialize-Firebase-Client-Side</summary>
+
+```sh
+-> https://console.firebase.google.com/ 
+-> booklovers 
+-> click </> (web) 
+-> Add Firebase to your web app -> Register app -> 
+-> uncheck [Also set up Firebase Hosting for this app]
+-> Register app
+-> Add Firebase SDK
+-> use npm -> npm install firebase
+
+```
+
+
+copy
+```js
+
+const firebaseConfig = {
+  apiKey: "xxxxxxxxxxxxxxxxxxxxxxxx",
+  authDomain: "xxxxxxxxxxxxxxxxxxxxxxxx",
+  projectId: "xxxxxxxxxxxxxxxxxxxxxxxx",
+  storageBucket: "xxxxxxxxxxxxxxxxxxxxxxxx",
+  messagingSenderId: "xxxxxxxxxxxxxxxxxxxxxxxx",
+  appId: "xxxxxxxxxxxxxxxxxxxxxxxx",
+  measurementId: "xxxxxxxxxxxxxxxxxxxxxxxx"
+};
+
+
+// copy to booklovers\src\lib\firebase\firebase.client.js
+
+```
+
+copy https://github.com/phptuts/booklovers (Firebase Initialize) to .env
+
+.env
+```sh
+# update env from js code
+
+PUBLIC_API_KEY=
+PUBLIC_AUTH_DOMAIN=
+PUBLIC_PROJECT_ID=
+PUBLIC_STORAGE_BUCKET=
+PUBLIC_MESSAGING_SENDER_ID=
+PUBLIC_API_ID=
+PUBLIC_MEASUREMENT_ID=
+PUBLIC_ERROR_MESSAGE="There was an error, please contact support."
+
+# booklovers\src\lib\firebase\firebase.client.js  update code & npm run dev ,  f12
+```
+
+
+install firebase depedency
+```sh
+npm i firebase -D
+
+update code firebase.client.js
+# booklovers\src\lib\firebase.client.js
+
+```
+
+
+</details>
+
+
+
 
 
 
