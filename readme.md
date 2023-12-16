@@ -184,6 +184,7 @@ PUBLIC_API_ID=
 PUBLIC_MEASUREMENT_ID=
 PUBLIC_ERROR_MESSAGE="There was an error, please contact support."
 
+# booklovers\src\lib\firebase\firebase.client.js  update code & npm run dev ,  f12
 ```
 
 
