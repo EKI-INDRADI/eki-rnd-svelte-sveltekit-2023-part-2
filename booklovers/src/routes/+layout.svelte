@@ -16,17 +16,24 @@ setTimeout.
 */
 
 	import messagesStore from '$lib/stores/messages.store';
-	import { onMount } from 'svelte';
-	onMount(() => {
-		setTimeout(() => {
-			// messagesStore.showError();
-			messagesStore.showSuccess('Yeahh!!')
-		}, 1000);
-	});
-	onMount;
+
+	// ---------------FOR TESTING
+	// import { onMount } from 'svelte';
+	// onMount(() => {
+	// 	setTimeout(() => {
+	// 		// messagesStore.showError();
+	// 		messagesStore.showSuccess('Yeahh!!')
+	// 	}, 1000);
+	// });
+	// onMount;
+	// ---------------FOR TESTING
+
+	//------------- import firebase (auto initialized)
+	import '$lib/firebase/firebase.client';
+	//------------- /import firebase (auto initialized
 
 	function closeMessage() {
-		messagesStore.hide()
+		messagesStore.hide();
 	}
 </script>
 
