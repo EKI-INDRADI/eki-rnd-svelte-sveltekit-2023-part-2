@@ -27,3 +27,7 @@ lerna-debug.log*
 *.njsproj
 *.sln
 *.sw?
+/booklovers/.env
+/booklovers/.env.*
+.env
+.env.*
