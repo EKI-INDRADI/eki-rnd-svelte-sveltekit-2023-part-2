@@ -204,7 +204,7 @@ update code firebase.client.js
 
 
 <details>
-  <summary>EKI-20231220-056-Logi-with-google</summary>
+  <summary>EKI-20231220-056-Login-with-google</summary>
 
 ```sh
 
