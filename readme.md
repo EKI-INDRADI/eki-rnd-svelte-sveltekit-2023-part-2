@@ -203,6 +203,29 @@ update code firebase.client.js
 
 
 
+<details>
+  <summary>EKI-20231220-056-Logi-with-google</summary>
+
+```sh
+
+# booklovers\src\lib\components\Auth\LoginWithGoogle.svelte
+# booklovers\src\lib\firebase\auth.client.js
+# booklovers\src\routes\login\+page.svelte
+
+
+# FOR CHECK USER LOGIN ACCOUNT (USER UID)
+# GO TO
+# https://console.firebase.google.com/
+#
+# -> Booklover -> Authentication 
+
+
+
+```
+
+</details>
+
+
 
 
 ## EKI INDRADI
