@@ -6,6 +6,9 @@ the navbar-collapse when the navba-toggler button is clicked
 <script>
 	import { page } from '$app/stores';
 	import authStore from '$lib/stores/auth.store';
+	import { logout } from '$lib/firebase/auth.client';
+	import messagesStore from '$lib/stores/messages.store';
+	import { goto } from '$app/navigation';
 	// let isLoggedIn = false; // true;
 	let isOpen = false;
 	function toggleMenu() {
@@ -19,6 +22,18 @@ the navbar-collapse when the navba-toggler button is clicked
 	*/
 	// console.log($page.url)
 	// console.log($page.url.pathname)
+
+	async function onLogout() {
+		try {
+			await logout();
+			goto('/');
+		} catch (e) {
+			console.log(e);
+			messagesStore.showError();
+			
+		}
+
+	}
 </script>
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -64,7 +79,7 @@ the navbar-collapse when the navba-toggler button is clicked
 						>
 					</li>
 					<li class="nav-item">
-						<span class:active={$page.url.pathname === '/logout'} class="nav-link">Logout</span>
+						<span on:click={onLogout} class="nav-link">Logout</span>
 					</li>
 					<!-- /Logged In -->
 				{:else}
