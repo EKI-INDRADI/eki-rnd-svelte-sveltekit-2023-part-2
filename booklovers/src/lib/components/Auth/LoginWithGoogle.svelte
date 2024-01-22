@@ -1,11 +1,15 @@
 <script>
 	import { LoginWithGoogle } from '$lib/firebase/auth.client';
 	import messagesStore from '$lib/stores/messages.store';
-
+	import { goto } from '$app/navigation'; // https://kit.svelte.dev/docs/modules#$app-navigation-goto
 	async function loginGoogle() {
 		try {
 			const user = await LoginWithGoogle();
 			// console.log(user) // <<< CHECK USER    uid  / user UID
+
+			await goto('/'); // fix success login redirect
+			return;
+			
 		} catch (e) {
             // check pake incognitor browser trs close popup
 			if (e.code === 'auth/popup-closed-by-user') { // disable sementara jika error
