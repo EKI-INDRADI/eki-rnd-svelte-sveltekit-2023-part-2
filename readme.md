@@ -226,6 +226,62 @@ update code firebase.client.js
 </details>
 
 
+<details>
+  <summary>EKI-20240122-059-Register-Email-And-Password</summary>
+
+```sh
+
+# https://github.com/phptuts/booklovers
+
+# Auth Form https://pastebin.com/raw/VkcLcTVG
+
+create file booklovers\src\lib\components\Auth\AuthForm.svelte
+
+
+https://console.firebase.google.com/ -> Booklovers -> Authentication -> copy email exist
+-> Email paste to ->  -> http://localhost:5173/signup
+
+
+ERROR HANDLE WITH REDIRECT + NOTIF :
+
+      # booklovers\src\lib\components\Auth\LoginWithGoogle.svelte
+			await goto('/'); // fix success login redirect
+			return;
+
+      # booklovers\src\routes\signup\+page.svelte
+      await goto('/login'); // fix success register redirect login
+			return;
+
+      # booklovers\src\routes\signup\+page.svelte
+      iff (e.code === 'auth/email-already-in-use') {
+				messagesStore.showError('You Have already registered, please log in.');
+				await goto('/login');
+				return;
+			}
+
+			if (e.code === 'auth/weak-password') {
+				messagesStore.showError('weak password!, please try again');
+				await goto('/signup');
+				return;
+			}
+
+			if (e.code === 'auth/missing-password') {
+				messagesStore.showError('missing password, please try again');
+				await goto('/signup');
+				return;
+			}
+
+			con
+
+
+```
+
+</details>
+
+
+
+
+
 
 ## EKI INDRADI
 
