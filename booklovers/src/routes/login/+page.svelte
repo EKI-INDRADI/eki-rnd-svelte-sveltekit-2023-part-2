@@ -13,18 +13,22 @@
 			const user = await loginWithEmailandPassword(email, password);
 			goto('/');
 		} catch (error) {
-
-			if (['auth/wrong-password', 'auth/user-not-found', 'auth/invalid-credential','auth/invalid-email'].includes(error.code)) {
+			if (
+				[
+					'auth/wrong-password',
+					'auth/user-not-found',
+					'auth/invalid-credential',
+					'auth/invalid-email'
+				].includes(error.code)
+			) {
 				messagesStore.showError('Invalid email or password.');
 				return;
-			} 
+			}
 
 			messagesStore.showError();
 			console.log(error.code);
 		}
 	}
-
-
 </script>
 
 <!-- div.row>div.col>h1 -->
@@ -38,6 +42,15 @@
 <AuthForm on:submit={onLogin} btnName="Login" />
 <hr />
 <LoginWithGoogle />
+<hr />
+
+<!-- div.row>div.col -->
+
+<div class="row">
+	<div class="col">
+		<a href="/forgot-password" class="btn btn-warning w-100">Forgot Password</a>
+	</div>
+</div>
 
 <svelte:head>
 	<title>Book Lovers - Login</title>

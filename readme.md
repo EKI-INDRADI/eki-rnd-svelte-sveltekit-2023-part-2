@@ -293,6 +293,26 @@ ERROR HANDLE WITH REDIRECT + NOTIF :
 </details>
 
 
+<details>
+  <summary>EKI-20240126-061-Forgot-Password-Workflow [INPROGGRESS]</summary>
+
+```sh
+
+# http://localhost:5173/forgo-password
+
+
+# console.log(firebaseConfig) // API KEY ISSUE FOR FORGOT PASSWORD
+# https://stackoverflow.com/questions/64343788/firebase-email-link-authentication-leads-to-a-page-that-says-error-encountered
+# https://booklovers-1ca99.firebaseapp.com/__/auth/action?mode=resetPassword&oobCode=XWEDWsatBq1iLg4pzGvaouACwSRjt0t5R0OaQgL6BlEAAAGNRT6bsQ&apiKey=&lang=en
+# perlu makesure https://console.firebase.google.com/
+# - Auth -> Templates
+# expetation : https://test-auth-79dae.firebaseapp.com/__/auth/action?apiKey={yourApiKey}&oobCode={obbCode}&continueUrl={urlParameter}&lang=en
+   
+
+```
+
+</details>
+
 
 
 
