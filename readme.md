@@ -280,6 +280,19 @@ ERROR HANDLE WITH REDIRECT + NOTIF :
 
 
 
+<details>
+  <summary>EKI-20240126-060-Login-with-email-and-password</summary>
+
+```sh
+# https://console.firebase.google.com
+
+# check register/login user pass
+
+```
+
+</details>
+
+
 
 
 
