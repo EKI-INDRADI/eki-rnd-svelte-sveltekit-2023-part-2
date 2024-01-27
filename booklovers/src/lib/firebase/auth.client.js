@@ -1,11 +1,12 @@
-import { getAuth, 
-    GoogleAuthProvider, 
-    signInWithPopup, 
-    signOut, 
-    createUserWithEmailAndPassword, 
+import {
+    getAuth,
+    GoogleAuthProvider,
+    signInWithPopup,
+    signOut,
+    createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
     sendPasswordResetEmail
- } from 'firebase/auth';
+} from 'firebase/auth';
 
 export async function LoginWithGoogle() {
     const auth = getAuth();
@@ -30,5 +31,26 @@ export async function loginWithEmailandPassword(email, password) {
 }
 
 export async function mailResetPasswordEmail(email) {
-    await sendPasswordResetEmail(getAuth(), email);
+
+
+    // bugFixForgotPassword : https://stackoverflow.com/questions/64343788/firebase-email-link-authentication-leads-to-a-page-that-says-error-encountered
+
+    // let actionCodeSettings = {
+    //     url: 'http://localhost:5173/login',
+    //     handleCodeInApp: true
+    // }
+
+    // await sendPasswordResetEmail(getAuth(), email, actionCodeSettings)
+    await sendPasswordResetEmail(getAuth(), email)
+    // .then(() => {
+    //     console.log("ok")
+    //   // Password has been reset!
+    //   // ..
+    // })
+    // .catch((error) => {
+    //     console.log(error)
+    // });
+
+
+
 }

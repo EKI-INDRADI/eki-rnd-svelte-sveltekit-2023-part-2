@@ -316,6 +316,36 @@ ERROR HANDLE WITH REDIRECT + NOTIF :
 
 
 
+<details>
+  <summary>EKI-20240128-062-Forgot-Password-Workflow-Final</summary>
+
+FIREBASE - FORGOT PASSWORD - Error encounter, The selected page mode is invalid.
+
+![Screenshot](1_firebase_forgot_password_error_encountered.png)
+
+FIREBASE - FORGOT PASSWORD - Error encounter bug fix
+
+![Screenshot](2_firebase_forgot_password_fix_error_encountered.png)
+
+FIREBASE - FORGOT PASSWORD
+
+![Screenshot](3_firebase_forgot_password_fix_error_encountered_solved.png)
+
+
+
+
+```sh
+
+for customize template  :
+
+firebase console -> authentication -> template -> reset password
+
+```
+
+</details>
+
+
+
 ## EKI INDRADI
 
 "TIME > KNOWLEDGE > MONEY". #2024_3_DIGIT_MOTIVATION
