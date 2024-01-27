@@ -1,13 +1,15 @@
 <script>
 	import { LoginWithGoogle } from '$lib/firebase/auth.client';
 	import messagesStore from '$lib/stores/messages.store';
-	import { goto } from '$app/navigation'; // https://kit.svelte.dev/docs/modules#$app-navigation-goto
+	// import { goto } from '$app/navigation'; // https://kit.svelte.dev/docs/modules#$app-navigation-goto
+	import { afterLogin } from '$lib/helpers/route.helper';
+	import { page } from '$app/stores';
 	async function loginGoogle() {
 		try {
 			const user = await LoginWithGoogle();
 			// console.log(user) // <<< CHECK USER    uid  / user UID
-
-			await goto('/'); // fix success login redirect
+			// await goto('/'); // fix success login redirect
+			await afterLogin($page.url)
 			return;
 			
 		} catch (e) {
