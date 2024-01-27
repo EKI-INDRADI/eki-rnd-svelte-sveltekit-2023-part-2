@@ -25,7 +25,10 @@ const firebaseConfig = {
 };
 
 
+
+
 if (getApps().length == 0) {
+
     const app = initializeApp(firebaseConfig);
 
     if (is_client) {

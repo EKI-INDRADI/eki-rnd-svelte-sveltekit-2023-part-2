@@ -293,6 +293,54 @@ ERROR HANDLE WITH REDIRECT + NOTIF :
 </details>
 
 
+<details>
+  <summary>EKI-20240126-061-Forgot-Password-Workflow [INPROGGRESS]</summary>
+
+```sh
+
+# http://localhost:5173/forgo-password
+
+
+# console.log(firebaseConfig) // API KEY ISSUE FOR FORGOT PASSWORD
+# https://stackoverflow.com/questions/64343788/firebase-email-link-authentication-leads-to-a-page-that-says-error-encountered
+# https://booklovers-1ca99.firebaseapp.com/__/auth/action?mode=resetPassword&oobCode=XWEDWsatBq1iLg4pzGvaouACwSRjt0t5R0OaQgL6BlEAAAGNRT6bsQ&apiKey=&lang=en
+# perlu makesure https://console.firebase.google.com -> Auth -> Templates
+# expetation : https://test-auth-79dae.firebaseapp.com/__/auth/action?apiKey={yourApiKey}&oobCode={obbCode}&continueUrl={urlParameter}&lang=en
+   
+
+```
+
+</details>
+
+
+
+
+<details>
+  <summary>EKI-20240128-062-Forgot-Password-Workflow-Final</summary>
+
+
+FIREBASE - FORGOT PASSWORD - Error encounter, The selected page mode is invalid.
+
+![Screenshot](1_firebase_forgot_password_error_encountered.png)
+
+FIREBASE - FORGOT PASSWORD - Error encounter bug fix
+
+![Screenshot](2_firebase_forgot_password_fix_error_encountered.png)
+
+FIREBASE - FORGOT PASSWORD
+
+![Screenshot](3_firebase_forgot_password_fix_error_encountered_solved.png)
+
+
+```sh
+
+for customize template  :
+
+firebase console -> authentication -> template -> reset password
+
+```
+
+</details>
 
 
 
