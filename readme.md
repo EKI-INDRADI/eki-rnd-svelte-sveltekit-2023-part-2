@@ -344,6 +344,24 @@ firebase console -> authentication -> template -> reset password
 
 
 
+<details>
+  <summary>EKI-20240128-063-After-Login-Redirect</summary>
+
+```sh
+
+example test custom redirect url : 
+
+- http://localhost:5173/login?redirect=/add -> login with google -> http://localhost:5173/add
+
+example test  default : 
+
+- http://localhost:5173/login -> login with google -> http://localhost:5173
+
+```
+
+
+</details>
+
 ## EKI INDRADI
 
 "TIME > KNOWLEDGE > MONEY". #2024_3_DIGIT_MOTIVATION

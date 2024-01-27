@@ -2,16 +2,20 @@
 	import LoginWithGoogle from '$lib/components/Auth/LoginWithGoogle.svelte';
 	import AuthForm from '$lib/components/Auth/AuthForm.svelte';
 	import { loginWithEmailandPassword } from '$lib/firebase/auth.client';
-	import { goto } from '$app/navigation';
+	// import { goto } from '$app/navigation';
 	import messagesStore from '$lib/stores/messages.store';
-
+	import { afterLogin } from '$lib/helpers/route.helper';
+	import { page } from '$app/stores';
 	async function onLogin(e) {
 		try {
 			const fromData = new FormData(e.target);
 			const email = fromData.get('email');
 			const password = fromData.get('password');
 			const user = await loginWithEmailandPassword(email, password);
-			goto('/');
+			// goto('/');
+
+			await afterLogin($page.url)
+			return;
 		} catch (error) {
 			if (
 				[

@@ -3,7 +3,9 @@
 	import LoginWithGoogle from '$lib/components/Auth/LoginWithGoogle.svelte';
 	import { registerWithEmailandPassword } from '$lib/firebase/auth.client';
 	import messagesStore from '$lib/stores/messages.store';
-	import { goto } from '$app/navigation'; // https://kit.svelte.dev/docs/modules#$app-navigation-goto
+	// import { goto } from '$app/navigation'; // https://kit.svelte.dev/docs/modules#$app-navigation-goto
+	import { page } from '$app/stores';
+	import { afterLogin } from '$lib/helpers/route.helper';
 	async function register(e) {
 		try {
 			const fromData = new FormData(e.target);
@@ -22,7 +24,10 @@
 
 			const user = await registerWithEmailandPassword(email, password); // akan kena handle try catch
 
-			await goto('/login'); // fix success regis redirect login
+			// await goto('/login'); // fix success regis redirect login
+			// return;
+
+			await afterLogin($page.url)
 			return;
 
 		} catch (e) {
