@@ -27,7 +27,9 @@
 			// await goto('/login'); // fix success regis redirect login
 			// return;
 
-			await afterLogin($page.url)
+			// NEXT 3:58
+			// await afterLogin($page.url)
+			await afterLogin($page.url, user.uid)
 			return;
 
 		} catch (e) {

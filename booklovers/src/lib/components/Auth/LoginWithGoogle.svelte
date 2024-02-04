@@ -9,7 +9,8 @@
 			const user = await LoginWithGoogle();
 			// console.log(user) // <<< CHECK USER    uid  / user UID
 			// await goto('/'); // fix success login redirect
-			await afterLogin($page.url)
+			// await afterLogin($page.url)
+			await afterLogin($page.url, user.uid)
 			return;
 			
 		} catch (e) {
