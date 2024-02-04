@@ -416,6 +416,17 @@ firebase console -> booklovers -> Authentication -> Firestore Database -> Data
 
 </details>
 
+<details>
+  <summary>EKI-20240204-065-Firebase-initialize-on-the-server</summary>
+
+```sh
+
+npm i firebase-admin -D
+
+```
+
+</details>
+
 ## EKI INDRADI
 
 "TIME > KNOWLEDGE > MONEY". #2024_3_DIGIT_MOTIVATION
