@@ -13,8 +13,8 @@
 			const password = fromData.get('password');
 			const user = await loginWithEmailandPassword(email, password);
 			// goto('/');
-
-			await afterLogin($page.url)
+			// await afterLogin($page.url)
+			await afterLogin($page.url, user.uid)
 			return;
 		} catch (error) {
 			if (
