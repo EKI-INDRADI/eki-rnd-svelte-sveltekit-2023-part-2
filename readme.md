@@ -427,6 +427,19 @@ npm i firebase-admin -D
 
 </details>
 
+
+
+<details>
+  <summary>EKI-20240204-066-Firebase-server-auth-plan</summary>
+
+![firebase_auth](4_firebase_authentication_serverside.png)
+
+</details>
+
+
+
+
+
 ## EKI INDRADI
 
 "TIME > KNOWLEDGE > MONEY". #2024_3_DIGIT_MOTIVATION
