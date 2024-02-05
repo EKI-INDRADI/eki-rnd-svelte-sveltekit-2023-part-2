@@ -438,6 +438,87 @@ npm i firebase-admin -D
 
 
 
+<details>
+  <summary>EKI-20240205-067-Token-Endpoint</summary>
+
+
+A. how to decrypt/decode firebase token
+
+```sh
+
+1. get token
+
+booklovers\src\routes\+page.svelte
+
+```
+
+
+```html
+
+<script>
+	import { onMount } from 'svelte';
+	import { getAuth } from 'firebase/auth';
+	// export let data;
+
+	onMount(async () => {
+		const token = await getAuth().currentUser?.getIdToken(true);
+        console.log(token,'jwt')
+	});
+</script>
+
+
+<!-- <h1>Num of users: {data.count}</h1> -->
+
+```
+
+
+```sh
+
+2. browser f12 console
+
+copy token
+
+3. go https://jwt.io/
+
+decrypt 
+
+algo : SHA256
+
+paste token
+
+```
+
+
+B. TESTING API
+
+1. download [postman](https://www.postman.com/)
+
+2. test postman
+
+```json
+{
+  "method" : "POST,
+  "url" : "http://localhost:5173/token"
+  "request" : {
+    "token" : "<your_firebase_token>",
+    "email" : "<your_email>"
+  }
+}
+
+```
+
+
+3.Success
+
+![Screenshot](5_cookies_from_firebase_token_1.png)
+
+![Screenshot](5_cookies_from_firebase_token_2.png)
+
+
+
+</details>
+
+
 
 
 ## EKI INDRADI

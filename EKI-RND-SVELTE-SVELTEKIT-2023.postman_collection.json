@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "13a61a5a-7798-4993-b753-e8ea770a276c",
+		"name": "EKI-RND-SVELTE-SVELTEKIT-2023",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TOKEN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\" : \"<your_firebase_token>\",\r\n    \"email\" : \"<your_email>\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5173/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5173",
+					"path": [
+						"token"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "EXAMPLE",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"token\" : \"<your_firebase_token>\",\r\n    \"email\" : \"<your_email>\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5173/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5173",
+							"path": [
+								"token"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "content-length",
+							"value": "21"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "set-cookie",
+							"value": "jwt=eyJhbGciOiJSUzI1NiIsImtpZCI6IjY5NjI5NzU5NmJiNWQ4N2NjOTc2Y2E2YmY0Mzc3NGE3YWE5OTMxMjkiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiRGl2ZXJnZW50IEh1bWFuIiwicGljdHVyZSI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FDZzhvY0swV0Z5eldoa293cVZ0SDlfM2paeDZsd0JCaXNJR1NDQVlpMWJseVNNLT1zOTYtYyIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9ib29rbG92ZXJzLTFjYTk5IiwiYXVkIjoiYm9va2xvdmVycy0xY2E5OSIsImF1dGhfdGltZSI6MTcwNzEyNzY2OSwidXNlcl9pZCI6InBhakRVVDJxQjZkdHRxNGFBQThHN1c2VmdNNTMiLCJzdWIiOiJwYWpEVVQycUI2ZHR0cTRhQUE4RzdXNlZnTTUzIiwiaWF0IjoxNzA3MTI3NjcwLCJleHAiOjE3MDcxMzEyNzAsImVtYWlsIjoiZGl2ZXJnZW50Lmh1bWFuQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7Imdvb2dsZS5jb20iOlsiMTA2OTY5NTI0ODg3NzczMjEzNjYyIl0sImVtYWlsIjpbImRpdmVyZ2VudC5odW1hbkBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJnb29nbGUuY29tIn19.D0dKsCc4T3n19aOXQ3zWJaAR7ibjV3kKmmrHuuftlpT_deagQIE0dciHTtkb6HE3NkIEJyB2k3R_SPS-B_wEyC5es7tasDznH-5NHZwD7_TUeZAb4a2mBdQ6i02rKYU05k3aMIDjhRVMoAN7FT8qqvDYLhOBfEgkT0FSaBReEnyxafMIphY8Bp2OgE9Jaag_KBToXii-9pATYe8QFxEKi9FXZfhyy9WEZrPMOcgg4H3A8w9BKa6A_IvKwgPfsJvyDPmqhnDDghyMXyhd7Xg09gocbLGI5qEdKmy6tturQsNxQrpHRG3gFh1_XHyU1I6_GICD3_HgZru9fwE7jumt6w; Max-Age=3583; Path=/; HttpOnly; SameSite=Lax"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Feb 2024 10:08:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"success\"\n}"
+				}
+			]
+		}
+	]
+}
