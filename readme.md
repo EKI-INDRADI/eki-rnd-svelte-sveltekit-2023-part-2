@@ -519,6 +519,57 @@ B. TESTING API
 </details>
 
 
+<details>
+  <summary>EKI-20240213-068-Send-Token-After-Register-Challenge</summary>
+
+booklovers\src\lib\firebase\auth.client.js
+```js
+
+export async function sendJWTToken() {
+
+    // NOTE : GET TOKEN firebase chrome F12 http://localhost:5173/token 
+    // (login with google enable generate JWT token)
+
+    const auth = getAuth()
+    const user = auth.currentUser;
+    if (!user) {
+        return;
+    }
+
+
+    const token = await user.getIdToken(true);
+    await fetch('/token', {
+        method: 'POST',
+        body: JSON.stringify({ token, email: user.email }),
+    })
+}
+
+```
+
+booklovers\src\lib\helpers\route.helper.js
+```js
+
+export async function afterLogin(url, userId) {
+    const route = url.searchParams.get('redirect') || '/'
+    await setUser(userId)
+    await sendJWTToken();
+    await goto(route);
+}
+
+```
+
+```sh
+
+google chrome F12 -> login with google -> network -> GET TOKEN http://localhost:5173/token (payload)
+
+
+google chrome F12 -> login with google -> application -> cookies -> http://localhost:5173 -> jwt -> copy
+
+go -> https://jwt.io/ -> RS256 -> paste
+
+```
+
+</details>
 
 
 ## EKI INDRADI

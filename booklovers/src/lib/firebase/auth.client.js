@@ -54,3 +54,23 @@ export async function mailResetPasswordEmail(email) {
 
 
 }
+
+
+export async function sendJWTToken() {
+
+    // NOTE : GET TOKEN firebase chrome F12 http://localhost:5173/token 
+    // (login with google enable generate JWT token)
+    
+    const auth = getAuth()
+    const user = auth.currentUser;
+    if (!user) {
+        return;
+    }
+
+
+    const token = await user.getIdToken(true);
+    await fetch('/token', {
+        method: 'POST',
+        body: JSON.stringify({ token, email: user.email }),
+    })
+}
