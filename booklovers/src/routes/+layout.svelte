@@ -30,7 +30,41 @@ setTimeout.
 
 	//------------- import firebase (auto initialized)
 	import '$lib/firebase/firebase.client';
+	import { onMount } from 'svelte';
+	import { sendJWTToken } from '$lib/firebase/auth.client';
 	//------------- /import firebase (auto initialized
+
+	let timerId;
+
+	async function sendServerToken() {
+
+		try {
+			await sendJWTToken();
+		} catch (error) {
+			clearInterval(timerId);
+			messagesStore.showError();
+			console.log(error);
+		}
+
+
+		return () => {
+			clearInterval(timerId);
+		}
+		
+	}
+
+	onMount(async () => {
+		try {
+			await sendServerToken();
+			timerId = setInterval(async ()=> { // automatically refresh token every 5 minutes
+				await sendServerToken();
+			}, 1000 * 10 * 60)
+
+		} catch (e) {
+			console.log(e);
+			messagesStore.showError();
+		}
+	});
 
 	function closeMessage() {
 		messagesStore.hide();

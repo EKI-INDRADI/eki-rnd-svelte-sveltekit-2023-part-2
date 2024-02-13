@@ -572,6 +572,85 @@ go -> https://jwt.io/ -> RS256 -> paste
 </details>
 
 
+<details>
+  <summary>EKI-20240213-069-Refresh-Token</summary>
+
+
+booklovers\src\routes\+layout.svelte
+```js
+
+	import { onMount } from 'svelte';
+	import { sendJWTToken } from '$lib/firebase/auth.client';
+
+	let timerId;
+
+	async function sendServerToken() {
+
+		try {
+			await sendJWTToken();
+		} catch (error) {
+			clearInterval(timerId);
+			messagesStore.showError();
+			console.log(error);
+		}
+
+
+		return () => {
+			clearInterval(timerId);
+		}
+		
+	}
+
+	onMount(async () => {
+		try {
+			await sendServerToken();
+			timerId = setInterval(async ()=> { // automatically refresh token every 5 second
+				await sendServerToken();
+			}, 1000 * 5 * 1)
+
+		} catch (e) {
+			console.log(e);
+			messagesStore.showError();
+		}
+	});
+
+```
+
+
+
+
+```sh
+
+google chrome F12 -> login with google -> network -> GET TOKEN http://localhost:5173/token (payload)
+
+
+google chrome F12 -> login with google -> application -> cookies -> http://localhost:5173 -> jwt -> check token auto refresh every 5 second
+
+```
+
+
+booklovers\src\routes\+layout.svelte
+```js
+
+	onMount(async () => {
+		try {
+			await sendServerToken();
+			timerId = setInterval(async ()=> { // automatically refresh token every 10 minutes
+				await sendServerToken();
+			}, 1000 * 10 * 60)
+
+		} catch (e) {
+			console.log(e);
+			messagesStore.showError();
+		}
+	});
+
+```
+
+
+</details>
+
+
 ## EKI INDRADI
 
 "TIME > KNOWLEDGE > MONEY". #2024_3_DIGIT_MOTIVATION
