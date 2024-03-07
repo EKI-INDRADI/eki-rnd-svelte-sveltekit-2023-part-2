@@ -651,6 +651,21 @@ booklovers\src\routes\+layout.svelte
 </details>
 
 
+<details>
+  <summary>EKI-20240307-070-Logout-server-side</summary>
+
+akan hit api disvelte, http://localhost:5173/logout untuk delete cookies jwt (network application cookies)
+
+```sh
+booklovers\src\routes\logout\+server.js -- create api logout
+booklovers\src\lib\firebase\auth.client.js -- export async function logout() 
+```
+
+
+</details>
+
+
+
 ## EKI INDRADI
 
 "TIME > KNOWLEDGE > MONEY". #2024_3_DIGIT_MOTIVATION
