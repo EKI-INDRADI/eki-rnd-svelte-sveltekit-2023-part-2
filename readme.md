@@ -666,6 +666,46 @@ booklovers\src\lib\firebase\auth.client.js -- export async function logout()
 
 
 
+<details>
+  <summary>EKI-20240307-071-Auth-Hooks</summary>
+
+berguna untuk : jika belum login dan membuka halaman lain, maka akan redierct ke halaman login, ketika login berhasil baru akan redirect ke halaman yang dituju seblumnya
+
+
+```sh
+
+booklovers\src\hooks.server.js
+
+    const protectRoutes = [
+        '/add',
+        '/edit',
+        '/profile',
+    ]
+
+    const guessRoutes = [
+        '/login',
+        '/signup',
+        '/forgot-password',
+    ]
+
+
+```
+
+example : 
+
+```sh
+
+http://localhost:5173/add
+http://localhost:5173/login?redirect=/add
+
+```
+
+
+</details>
+
+
+
+
 ## EKI INDRADI
 
 "TIME > KNOWLEDGE > MONEY". #2024_3_DIGIT_MOTIVATION
