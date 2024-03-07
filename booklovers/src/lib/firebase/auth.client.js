@@ -16,6 +16,8 @@ export async function LoginWithGoogle() {
 
 export async function logout() {
     await signOut(getAuth());
+    // -------- akan hit api di svelte , http://localhost:5173/logout untuk delete cookies jwt (network application cookies)
+    await fetch('/logout') 
 
 }
 
