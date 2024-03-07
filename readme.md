@@ -704,6 +704,64 @@ http://localhost:5173/login?redirect=/add
 </details>
 
 
+<details>
+  <summary>EKI-20240307-072-Add-Book-Validation</summary>
+
+Add Book Validation Part 1
+
+```sh
+
+https://github.com/phptuts/booklovers
+
+Add Book Form Validation
+
+https://pastebin.com/raw/G8502qBJ
+
+
+booklovers\src\lib\components\Books\BookForm.svelte
+
+booklovers\src\routes\add\+page.svelte
+
+
+
+depedency for validation :
+npm i yup -D    
+
+
+
+yup documentation :
+
+https://github.com/jquense/yup
+
+https://yup-docs.vercel.app/docs/intro
+
+booklovers\src\lib\validators\book.validator.js
+
+
+```
+
+
+Add Book Validation Part 2
+
+```sh
+
+booklovers\src\lib\validators\book.validator.js (schema.validate with error handle)
+
+booklovers\src\routes\add\+page.server.js (validateBook)
+
+booklovers\src\routes\add\+page.svelte (<BookForm {form}/>)
+
+booklovers\src\lib\components\Books\BookForm.svelte (export form & value)
+
+
+detail commit : 
+https://github.com/phptuts/booklovers/commit/2380381bccbe195af8664b8ecdfe88060cb257d8
+
+```
+
+</details>
+
+
 
 
 ## EKI INDRADI
