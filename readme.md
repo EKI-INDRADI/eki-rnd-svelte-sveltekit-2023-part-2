@@ -763,6 +763,53 @@ https://github.com/phptuts/booklovers/commit/2380381bccbe195af8664b8ecdfe88060cb
 
 
 
+<details>
+  <summary>EKI-20240311-073-Save-Book-Database</summary>
+
+```sh
+
+edit booklovers\src\lib\components\Books\BookForm.svelte
+
+create booklovers\src\lib\firebase\database.server.js
+
+edit booklovers\src\routes\add\+page.server.js
+
+create booklovers\src\lib\firebase\firestorage.server.js
+
+import { PUBLIC_STORAGE_BUCKET } from '$env/static/public'; // from booklovers\.env
+
+booklovers\src\lib\firebase\firestorage.server.js
+
+npm i uuid -D
+
+---- troubleshoot
+
+booklovers\src\lib\validators\book.validator.js << check value
+booklovers\src\routes\add\+page.server.js
+
+firebase console -> booklovers -> firebase database 
+
+
+reference commit : https://github.com/phptuts/booklovers/commit/2c998217d85ef5ccb517a2745668fe6fdaa232e1
+
+add book success url redirect to "http://localhost:5173/book/xxxxxx"
+
+
+test image public
+
+booklovers\src\routes\+page.svelte
+<img src="https://storage.googleapis.com/booklovers-xxx.appspot.com/xxxx" >
+
+
+image directory
+firebase console -> booklovers -> storage
+
+```
+
+</details>
+
+
+
 
 ## EKI INDRADI
 
