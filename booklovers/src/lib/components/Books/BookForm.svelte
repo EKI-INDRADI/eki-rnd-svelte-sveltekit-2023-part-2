@@ -1,10 +1,8 @@
-
-
-
 <!---PART 2-->
 <script>
 	export let form;
 </script>
+
 <!---/PART 2-->
 
 <form enctype="multipart/form-data" method="POST">
@@ -70,12 +68,20 @@
 	</div>
 	<div class="mb-3">
 		<label for="main_picture" class="form-label">Main Book Picture</label>
-		<input
+		<!-- <input
 			class="form-control form-control-lg"
 			id="main_picture"
 			accept="image/*"
 			name="main_picture"
 			value={form?.main_picture || ''}
+			class:is-invalid={form?.error_main_picture}
+			type="file"
+		/> -->
+		<input
+			class="form-control form-control-lg"
+			id="main_picture"
+			accept="image/*"
+			name="main_picture"
 			class:is-invalid={form?.error_main_picture}
 			type="file"
 		/>
@@ -85,12 +91,20 @@
 	</div>
 	<div class="mb-3">
 		<label for="small_picture" class="form-label">Small Book Picture</label>
+		<!-- <input
+		class="form-control form-control-lg"
+		id="small_picture"
+		accept="image/*"
+		name="small_picture"
+		value={form?.small_picture || ''}
+		class:is-invalid={form?.error_small_picture}
+		type="file"
+		/> -->
 		<input
 			class="form-control form-control-lg"
 			id="small_picture"
 			accept="image/*"
 			name="small_picture"
-			value={form?.small_picture || ''}
 			class:is-invalid={form?.error_small_picture}
 			type="file"
 		/>
