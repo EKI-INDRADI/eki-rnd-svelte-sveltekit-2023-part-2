@@ -16,15 +16,15 @@ export async function addBook(book, userId) {
     })
     // save the pictures
 
-    const smallPictureUrl = await saveFiletoBucket(book.small_picture, 
+    const smallPictureUrl = await saveFiletoBucket(book.small_picture,
         `${userId}/${bookRef.id}/small_picture`);
 
-    const mainPictureUrl = await saveFiletoBucket(book.main_picture, 
+    const mainPictureUrl = await saveFiletoBucket(book.main_picture,
         `${userId}/${bookRef.id}/main_picture`);
 
 
-        console.log("smallPictureUrl" ,smallPictureUrl)
-        console.log("mainPictureUrl" ,mainPictureUrl)
+    console.log("smallPictureUrl", smallPictureUrl)
+    console.log("mainPictureUrl", mainPictureUrl)
     // update the doc in firestore database with the picture urls
 
     await bookRef.update({
@@ -34,4 +34,12 @@ export async function addBook(book, userId) {
 
     // return book id
     return bookRef.id
+}
+
+export async function getBook(id) {
+    const bookRef = await db.collection('books').doc(id).get();
+
+    if (bookRef.exists) {
+        return { id: bookRef.id, ...bookRef.data() }
+    }
 }

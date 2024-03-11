@@ -808,7 +808,29 @@ firebase console -> booklovers -> storage
 
 </details>
 
+<details>
+  <summary>EKI-20240311-074-Show-Book-Page</summary>
 
+```sh
+
+copy : 25 - Show Book page from https://github.com/phptuts/booklovers 
+
+create booklovers\src\routes\book\[id]\+page.svelte
+
+test http://localhost:5173/book/123
+
+create booklovers\src\routes\book\[id]\+page.server.js
+
+
+test http://localhost:5173/book/9FSN5C9aXhZYlvROer1S
+
+test http://localhost:5173/book/123 -> 404
+
+
+```
+
+
+</details>
 
 
 ## EKI INDRADI
