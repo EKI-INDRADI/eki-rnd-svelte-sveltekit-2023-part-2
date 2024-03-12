@@ -10,7 +10,7 @@ export async function load({ params, locals }) {
     }
 
     if (book.user_id !== locals.user.id) {
-        throw error(403, {message : 'Access Denied!'})
+        throw error(403, { message: 'Access Denied!' })
     }
 
 
@@ -21,23 +21,25 @@ export async function load({ params, locals }) {
 
 
 export const actions = {
-    default : async ({request,locals, params}) => {
+    default: async ({ request, locals, params }) => {
         const book = await getBook(params.id);
 
         if (!book || book.user_id !== locals.user.id) {
-            throw error(403, { message: 'Access Denied!'});
+            throw error(403, { message: 'Access Denied!' });
         } //end if
 
-        const formData =  await request.formData();
+        const formData = await request.formData();
         const data = await validateBook(formData, true)
         if (!data.success) {
             return fail(422, data)
         }
 
 
+        // let result = await editBook(params.id, data.book, locals.user.id)
         await editBook(params.id, data.book, locals.user.id)
-
+        // if (result?.statusCode == 200) {
         throw redirect(303, `/book/${params.id}`);
+        // }
 
     }
 }
