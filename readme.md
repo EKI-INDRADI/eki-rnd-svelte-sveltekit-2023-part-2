@@ -847,6 +847,17 @@ update booklovers\src\lib\firebase\firebase.server.js
 
 </details>
 
+<details>
+  <summary>EKI-20240312-076-Enhanced-Forms</summary>
+
+
+```sh
+
+update booklovers\src\lib\components\Books\BookForm.svelte
+
+```
+
+</details>
 
 ## EKI INDRADI
 
