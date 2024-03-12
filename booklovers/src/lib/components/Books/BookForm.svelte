@@ -1,17 +1,29 @@
 <!---PART 2-->
 <script>
+	import { enhance } from '$app/forms';
 	export let form;
+
+	let submitting = false;
+	$: if (form && form.success === false) {
+		submitting = false;
+	}
+
+	function submitForm(e) {
+		submitting = true;
+	}
 </script>
 
 <!---/PART 2-->
+<form on:submit={submitForm} use:enhance enctype="multipart/form-data" method="POST">
+	<!-- <form  enctype="multipart/form-data" method="POST"> -->
 
-<form enctype="multipart/form-data" method="POST">
 	<div class="mb-3">
 		<label for="title" class="form-label">Book Title</label>
+		<!-- class="form-control is-invalid" -->
 		<input
 			type="text"
 			name="title"
-			class="form-control is-invalid"
+			class="form-control"
 			id="title"
 			value={form?.title || ''}
 			class:is-invalid={form?.error_title}
@@ -112,5 +124,13 @@
 			<div class="invalid-feedback">{form?.error_small_picture}</div>
 		{/if}
 	</div>
-	<button type="submit" class="btn btn-primary w-100"> Submit </button>
+	<button disabled={submitting} type="submit" class="btn btn-primary w-100">
+		{#if submitting}
+			Submitting...
+		{:else}
+			Submit
+		{/if}
+	</button>
+
+	<!-- <button type="submit" class="btn btn-primary w-100"> Submit </button> -->
 </form>

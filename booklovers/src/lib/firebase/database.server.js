@@ -23,8 +23,8 @@ export async function addBook(book, userId) {
         `${userId}/${bookRef.id}/main_picture`);
 
 
-    console.log("smallPictureUrl", smallPictureUrl)
-    console.log("mainPictureUrl", mainPictureUrl)
+    // console.log("smallPictureUrl", smallPictureUrl)
+    // console.log("mainPictureUrl", mainPictureUrl)
     // update the doc in firestore database with the picture urls
 
     await bookRef.update({
