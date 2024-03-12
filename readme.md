@@ -821,7 +821,6 @@ test http://localhost:5173/book/123
 
 create booklovers\src\routes\book\[id]\+page.server.js
 
-
 test http://localhost:5173/book/9FSN5C9aXhZYlvROer1S
 
 test http://localhost:5173/book/123 -> 404
@@ -829,6 +828,22 @@ test http://localhost:5173/book/123 -> 404
 
 ```
 
+
+</details>
+
+<details>
+  <summary>EKI-20240312-075-Edit-Book-Page</summary>
+
+
+```sh
+
+create booklovers\src\routes\edit\[id]\+page.server.js
+create booklovers\src\routes\edit\[id]\+page.svelte
+update booklovers\src\lib\components\Books\BookForm.svelte
+update booklovers\src\lib\validators\book.validator.js
+update booklovers\src\lib\firebase\firebase.server.js
+
+```
 
 </details>
 
