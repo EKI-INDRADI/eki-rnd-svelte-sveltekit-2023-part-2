@@ -859,6 +859,30 @@ update booklovers\src\lib\components\Books\BookForm.svelte
 
 </details>
 
+
+<details>
+  <summary>EKI-20240312-077-Edit-Book-Page-Firebase-Image-Issue</summary>
+
+
+```sh
+
+NOTE : URL NOT CHANGES, UPDATE IMAGE  ALREADY CHANGES, SVELTE IMAGE NOT RELOAD BECAUSE SAME URL
+
+```
+
+example fix : 
+
+```html
+
+ <img src="https://storage.googleapis.com/booklovers-1ca99.appspot.com/pajDUT2qB6dttq4aAA8G7W6VgM53%2F9mGztPMBQG9RvBicDNTd%2Fmain_picture?timestamp=9999999999" > 
+
+ <img src="https://storage.googleapis.com/booklovers-1ca99.appspot.com/pajDUT2qB6dttq4aAA8G7W6VgM53%2F9mGztPMBQG9RvBicDNTd%2Fmain_picture" > 
+
+```
+
+
+</details>
+
 ## EKI INDRADI
 
 "TIME > KNOWLEDGE > MONEY". #2024_3_DIGIT_MOTIVATION

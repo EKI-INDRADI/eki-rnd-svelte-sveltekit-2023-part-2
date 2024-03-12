@@ -40,31 +40,73 @@ export async function editBook(id, form, userId) {
     const bookRef = await db.collection('books').doc(id);
     let mainPicture = form.main_picture || null;
     let smallPicture = form.small_picture || null;
-    delete form.main_picture;
-    delete form.small_picture;
-    await bookRef.update(form);
 
+    //-------------- issue memory
+    // NOT ISSUE, ISSUE IN SVELTE IMAGE NOT RELOAD BECAUSE SAME URL (FIREBASE IMAGE)
+    // delete form.main_picture;
+    // delete form.small_picture;
+    // await bookRef.update(form)
+
+    if (form?.main_picture) {
+        mainPicture = form.main_picture ?? null
+        try { delete form.main_picture; } catch (skip_err) { }
+    }
+
+    if (form?.small_picture) {
+        smallPicture = form.small_picture ?? null
+        try { delete form.small_picture; } catch (skip_err) { }
+    }
+
+    await bookRef.update(form)
+    //-------------- issue memory
 
     if (mainPicture) {
         const mainPictureUrl = await saveFiletoBucket(mainPicture,
             `${userId}/${bookRef.id}/main_picture`)
 
-        bookRef.update({ main_picture: mainPictureUrl })
+        // console.log('main_picture', mainPictureUrl)
+        try {
+            await bookRef.update({ main_picture: mainPictureUrl })
+        } catch (error) {
+            console.log('error bookRef.update main_picture :')
+            console.log(error)
+        }
     }
+
 
     if (smallPicture) {
         const smallPictureUrl = await saveFiletoBucket(smallPicture,
             `${userId}/${bookRef.id}/small_picture`)
-
-        bookRef.update({ small_picture: smallPictureUrl })
+        // console.log('small_picture', smallPictureUrl)
+        try {
+            await bookRef.update({ small_picture: smallPictureUrl })
+        } catch (error) {
+            console.log('error bookRef.update small_picture :')
+            console.log(error)
+        }
 
     }
+
+
+
+    //-------------- bug fix await
+    // let getData = await getBook(id)
+    // let res_json = {}
+    // res_json.statusCode = 200
+    // res_json.message = 'success update'
+    // res_json.data = { ...getData }
+    // return res_json
+    //-------------- bug fix await
 }
 
 export async function getBook(id) {
+    //-----------firebase issue image cache
+
+    // NOTE : URL NOT CHANGES, IMAGE  ALREADY CHANGES, SVELTE IMAGE NOT RELOAD BECAUSE SAME URL
     const bookRef = await db.collection('books').doc(id).get();
 
     if (bookRef.exists) {
         return { id: bookRef.id, ...bookRef.data() }
     }
+    //-----------firebase issue image cache
 }
