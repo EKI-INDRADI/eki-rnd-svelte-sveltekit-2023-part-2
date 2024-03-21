@@ -110,3 +110,35 @@ export async function getBook(id) {
     }
     //-----------firebase issue image cache
 }
+
+
+export async function toggleBookLike(bookId, userId) {
+    const bookDoc = await db.collection('books').doc(bookId);
+    const userDoc = await db.collection('users').doc(userId);
+    const user = await userDoc.get();
+    const userData = user.data();
+
+    // unlike the book
+    if (userData.bookIds && userData.bookIds.includes(bookId)) {
+        await userDoc.update({
+            bookIds: firestore.FieldValue.arrayRemove(bookId)
+        })
+        await bookDoc.update({
+            likes: firestore.FieldValue.increment(-1)
+        })
+    } else {
+        // like the book
+        await userDoc.update({
+            bookIds: firestore.FieldValue.arrayUnion(bookId)
+        })
+        await bookDoc.update({
+            likes: firestore.FieldValue.increment(1)
+        })
+
+    }
+
+    return await getBook(bookId);
+
+
+
+}
