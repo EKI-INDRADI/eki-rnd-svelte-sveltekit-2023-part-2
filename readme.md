@@ -883,6 +883,48 @@ example fix :
 
 </details>
 
+
+<details>
+  <summary>EKI-20240321-078-Like-Endpoint</summary>
+
+
+```sh
+
+update booklovers\src\routes\like\[id]\+server.js export async function GET
+
+update booklovers\src\lib\firebase\database.server.js  toggleBookLike
+
+firebase console -> firestore database -> copy 1 books id
+
+update booklovers\src\routes\+page.svelte -> paste book id (for test like) 
+
+# ---------- TEST
+# NOTE : like test counter incerement/decrement 1/0 (test by refresh page http://localhost:5173/)
+firebase console -> firestore database 
+collection = books
+{
+  ...
+  likes : 1 # ->> 0 or 1
+  ...
+}
+
+collection = user
+{
+  ...
+  bookIds : [  # ->> exist or not exist key []
+    "sadasdas",
+  ]
+  ...
+}
+
+# ---------- /TEST
+ 
+
+```
+
+
+</details>
+
 ## EKI INDRADI
 
 "TIME > KNOWLEDGE > MONEY". #2024_3_DIGIT_MOTIVATION
