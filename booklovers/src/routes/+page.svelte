@@ -22,14 +22,17 @@
 
 
 <script>
-	import { onMount } from "svelte";
 
-	onMount(async () => {
-		const response = await fetch('/like/9mGztPMBQG9RvBicDNTd');
-		const json = await response.json()
-		console.log(response, "jwt");
-	});
+	//----------------------------------
+	// import { onMount } from "svelte";
+
+	// onMount(async () => {
+	// 	const response = await fetch('/like/9mGztPMBQG9RvBicDNTd');
+	// 	const json = await response.json()
+	// 	console.log(response, "jwt");
+	// });
 
 
 	// NOTE : like test counter incerement/decrement 1/0 ( test by refresh page)
+	//----------------------------------
 </script>

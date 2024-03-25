@@ -2,6 +2,7 @@ import { db } from '$lib/firebase/firebase.server';
 import { firestore } from 'firebase-admin';
 import { saveFiletoBucket } from '$lib/firebase/firestorage.server';
 
+
 export async function addBook(book, userId) {
     // save to the firestore database without picture information
     const bookCollection = db.collection('books');
@@ -99,16 +100,25 @@ export async function editBook(id, form, userId) {
     //-------------- bug fix await
 }
 
-export async function getBook(id) {
+export async function getBook(id, userId = null) {
     //-----------firebase issue image cache
 
     // NOTE : URL NOT CHANGES, IMAGE  ALREADY CHANGES, SVELTE IMAGE NOT RELOAD BECAUSE SAME URL
     const bookRef = await db.collection('books').doc(id).get();
 
     if (bookRef.exists) {
-        return { id: bookRef.id, ...bookRef.data() }
+        const user = userId ? await getUser(userId) : null;
+        // console.log("const user = userId ? await getUser(userId) : null;  = ")
+        // console.log(user)
+        const likedBook = user?.bookIds?.includes(id) || false;
+        return { id: bookRef.id, ...bookRef.data(), likedBook }
     }
     //-----------firebase issue image cache
+}
+
+export async function getUser(userId) {
+    const user = await db.collection('users').doc(userId).get();
+    return user?.data();
 }
 
 
