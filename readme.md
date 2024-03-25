@@ -925,6 +925,34 @@ collection = user
 
 </details>
 
+
+<details>
+  <summary>EKI-20240325-079-Like-Component</summary>
+
+```sh
+
+https://github.com/phptuts/booklovers/commit/8e60266489d70a1b402ce9a2eeede66cdbb855b7
+
+https://github.com/phptuts/booklovers (Like Component)
+
+create booklovers\src\lib\components\Books\Like.svelte
+update booklovers\src\lib\firebase\database.server.js getBook , getUser
+
+-- makesure refresh page home for input
+
+{
+  user_id: 'xxxx',
+  bookIds: [ 'xxxx' ]
+}
+
+update booklovers\src\routes\+page.svelte load
+update booklovers\src\routes\book\[id]\+page.svelte book.linkedBook
+update booklovers\src\lib\components\Books\Like.svelte
+
+```
+
+</details>
+
 ## EKI INDRADI
 
 "TIME > KNOWLEDGE > MONEY". #2024_3_DIGIT_MOTIVATION
