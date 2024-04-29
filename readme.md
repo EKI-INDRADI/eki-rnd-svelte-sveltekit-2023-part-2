@@ -955,11 +955,13 @@ update booklovers\src\lib\components\Books\Like.svelte
 
 
 <details>
-  <summary>EKI-20240429-080-Toggling-Like</summary>
+  <summary>EKI-20240429-080-Toggling-Like & EKI-20240429-081-Toggling-Like-Part2</summary>
 
 ```sh
 
 update booklovers\src\lib\components\Books\Like.svelte
+update booklovers\static\loading.gif
+update booklovers\src\routes\book\[id]\+page.svelte
 
 TEST URL : http://localhost:5173/book/9mGztPMBQG9RvBicDNTd
 
