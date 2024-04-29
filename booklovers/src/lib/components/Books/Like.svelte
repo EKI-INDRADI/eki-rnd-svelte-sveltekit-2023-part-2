@@ -3,6 +3,7 @@
 
 	export let book;
 	// tonggle Like
+	export let textAlign = 'left';
 	let submitting = false;
 
 	async function toggleLike() {
@@ -18,7 +19,7 @@
 	}
 </script>
 
-<div style="text-align: left" class="like">
+<div style="text-align: {textAlign}" class="like">
 	<!--  TOGGLING -->
 	{#if submitting}
 	<img src="/loading.gif" alt="" />

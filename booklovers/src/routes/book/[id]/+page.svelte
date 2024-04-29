@@ -30,7 +30,7 @@
 <!-- div.row>div.col -->
 <div class="row">
 	<div class="col">
-		<Like {book} />
+		<Like {book} textAlign="center" />
 	</div>
 </div>
 
