@@ -953,6 +953,24 @@ update booklovers\src\lib\components\Books\Like.svelte
 
 </details>
 
+
+<details>
+  <summary>EKI-20240429-080-Toggling-Like</summary>
+
+```sh
+
+update booklovers\src\lib\components\Books\Like.svelte
+
+TEST URL : http://localhost:5173/book/9mGztPMBQG9RvBicDNTd
+
+CLICK MENU TOGGLE : http://localhost:5173/like/9mGztPMBQG9RvBicDNTd
+
+
+```
+
+</details>
+
+
 ## EKI INDRADI
 
 "TIME > KNOWLEDGE > MONEY". #2024_3_DIGIT_MOTIVATION
