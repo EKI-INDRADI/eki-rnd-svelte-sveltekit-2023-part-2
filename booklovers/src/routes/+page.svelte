@@ -21,7 +21,7 @@
 
 
 
-<script>
+<!-- <script> 
 
 	//----------------------------------
 	// import { onMount } from "svelte";
@@ -36,3 +36,15 @@
 	// NOTE : like test counter incerement/decrement 1/0 ( test by refresh page)
 	//----------------------------------
 </script>
+-->
+
+<script>
+	export let data;
+	// console.log(data);
+</script>
+
+<ul>
+	{#each data.books as book (book.id)}
+		<li>{book.title}</li>
+	{/each}
+</ul>

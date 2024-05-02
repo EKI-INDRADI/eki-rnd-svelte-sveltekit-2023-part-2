@@ -973,6 +973,20 @@ CLICK MENU TOGGLE : http://localhost:5173/like/9mGztPMBQG9RvBicDNTd
 </details>
 
 
+<details>
+  <summary>EKI-20240502-082-Books-Home-page</summary>
+
+```sh
+
+booklovers\src\lib\firebase\database.server.js getBooks
+booklovers\src\routes\+page.server.js load
+booklovers\src\routes\+page.svelte script ul
+
+```
+
+</details>
+
+
 ## EKI INDRADI
 
 "TIME > KNOWLEDGE > MONEY". #2024_3_DIGIT_MOTIVATION
