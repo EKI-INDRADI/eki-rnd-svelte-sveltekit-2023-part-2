@@ -7,7 +7,17 @@ import { getBooks } from "$lib/firebase/database.server";
 //     count : count.data().count
 // }
 
-export async function load({ locals }) {
-    const books = await getBooks(locals?.user?.id);
-    return { books }
+export async function load({ locals, url }) {
+
+    const page = url.searchParams.get('page') || 1;
+
+    // const books = await getBooks(locals?.user?.id);
+    const { books, next, previous } = await getBooks(locals?.user?.id, page);
+
+    return {
+        books,
+        next,
+        previous,
+        page
+    }
 }
