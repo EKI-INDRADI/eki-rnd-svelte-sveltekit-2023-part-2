@@ -1,6 +1,7 @@
 import { db } from '$lib/firebase/firebase.server';
 import { firestore } from 'firebase-admin';
 import { saveFiletoBucket } from '$lib/firebase/firestorage.server';
+import { PAGE_SIZE } from '$env/static/private';
 
 
 export async function addBook(book, userId) {
@@ -117,18 +118,40 @@ export async function getBook(id, userId = null) {
 }
 
 
-export async function getBooks(userId) {
+export async function getBooks(userId, page = 1) {
 
     const user = userId ? await getUser(userId) : null;
 
-    const books = await db.collection('books').limit(5).orderBy('created_at', 'desc').get();
+    // const books = await db.collection('books').limit(5).orderBy('created_at', 'desc').get();
+
+    const bookCount = await db.collection('books').count().get();
+
+    const totalBooks = bookCount.data().count;
+
+    const next = totalBooks > (page * +PAGE_SIZE);
+
+    const previous = page > 1;
+
+    const books = await db.collection('books')
+        .limit(+PAGE_SIZE)
+        .offset((page - 1) * +PAGE_SIZE)
+        .orderBy('created_at', 'desc')
+        .get();
+
 
     const likedBooks = books.docs.map(d => {
         const likedBook = user?.bookIds?.includes(d.id) || false;
         return { ...d.data(), id: d.id, likedBook }
     })
 
-    return likedBooks;
+    // return likedBooks;
+
+
+    return {
+        books : likedBooks,
+        next,
+        previous
+    };
 }
 
 export async function getUser(userId) {

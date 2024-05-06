@@ -992,7 +992,6 @@ booklovers\src\routes\+page.svelte script ul
 
 ```sh
 
-
 EDIT : booklovers\src\lib\components\Books\Like.svelte
 TEST WITHOUT LOGIN : http://localhost:5173/book/9mGztPMBQG9RvBicDNTd
 TEST WITH LOGIN : http://localhost:5173/book/9mGztPMBQG9RvBicDNTd
@@ -1000,6 +999,32 @@ TEST WITH LOGIN : http://localhost:5173/book/9mGztPMBQG9RvBicDNTd
 ```
 
 </details>
+
+
+<details>
+  <summary>EKI-20240506-084-Pagination</summary>
+
+update .env
+```sh
+PAGE_SIZE=3
+```
+
+test makesure input 9 item & test page
+```sh
+http://localhost:5173/?page=1
+http://localhost:5173/?page=2
+http://localhost:5173/?page=3
+```
+
+
+```sh
+update booklovers\src\lib\firebase\database.server.js
+update booklovers\src\routes\+page.server.js
+update booklovers\src\routes\+page.svelte
+```
+
+</details>
+
 
 
 ## EKI INDRADI
