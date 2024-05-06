@@ -987,6 +987,21 @@ booklovers\src\routes\+page.svelte script ul
 </details>
 
 
+<details>
+  <summary>EKI-20240506-083-Like-Component-Bug</summary>
+
+```sh
+
+
+EDIT : booklovers\src\lib\components\Books\Like.svelte
+TEST WITHOUT LOGIN : http://localhost:5173/book/9mGztPMBQG9RvBicDNTd
+TEST WITH LOGIN : http://localhost:5173/book/9mGztPMBQG9RvBicDNTd
+
+```
+
+</details>
+
+
 ## EKI INDRADI
 
 "TIME > KNOWLEDGE > MONEY". #2024_3_DIGIT_MOTIVATION
