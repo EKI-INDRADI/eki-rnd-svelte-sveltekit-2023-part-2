@@ -1026,6 +1026,21 @@ update booklovers\src\routes\+page.svelte
 </details>
 
 
+<details>
+  <summary>EKI-20240507-085-Book-Component-and-Home-Page</summary>
+
+```sh
+https://github.com/phptuts/booklovers
+https://pastebin.com/raw/XSRHFTG5
+
+update booklovers\src\routes\+page.svelte
+update booklovers\src\lib\components\Books\Book.svelte
+
+
+```
+
+</details>
+
 
 ## EKI INDRADI
 
