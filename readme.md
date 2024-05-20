@@ -1042,6 +1042,24 @@ update booklovers\src\lib\components\Books\Book.svelte
 </details>
 
 
+<details>
+  <summary>EKI-20240520-086-Profile-Page-Setup</summary>
+
+```sh
+
+https://github.com/phptuts/booklovers
+
+https://pastebin.com/raw/Yz59kbdR (profile page)
+
+create booklovers\src\routes\profile\+layout.svelte
+create booklovers\src\routes\profile\+page.svelte
+create booklovers\src\routes\profile\favorites\+page.svelte
+
+
+```
+
+</details>
+
 ## EKI INDRADI
 
 "TIME > KNOWLEDGE > MONEY". #2024_3_DIGIT_MOTIVATION
