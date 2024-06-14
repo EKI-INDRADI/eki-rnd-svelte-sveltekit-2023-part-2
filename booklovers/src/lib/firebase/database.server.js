@@ -101,6 +101,22 @@ export async function editBook(id, form, userId) {
     //-------------- bug fix await
 }
 
+export async function getBooksForUser(userId) {
+    const user = await getUser(userId);
+
+    const books = await db.collection('books')
+        .orderBy('created_at', 'desc')
+        .where('user_id', '==', userId)
+        .get();
+
+    return books.docs.map(d => {
+        const likedBook = user?.bookIds?.includes(d.id) || false;
+
+        return { id: d.id, ...d.data(), likedBook }
+    })
+}
+
+
 export async function getBook(id, userId = null) {
     //-----------firebase issue image cache
 
@@ -148,7 +164,7 @@ export async function getBooks(userId, page = 1) {
 
 
     return {
-        books : likedBooks,
+        books: likedBooks,
         next,
         previous
     };
