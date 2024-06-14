@@ -1060,6 +1060,61 @@ create booklovers\src\routes\profile\favorites\+page.svelte
 
 </details>
 
+
+<details>
+  <summary>EKI-20240614-087-My-Book</summary>
+
+```sh
+
+updete booklovers\src\lib\firebase\database.server.js getBooksForUser
+create booklovers\src\routes\profile\+page.server.js 
+update booklovers\src\routes\profile\+page.svelte
+
+
+```
+
+
+http://localhost:5173/profile
+
+if get error like this :
+
+```sh
+ {
+  code: 9,
+  details: 'The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/booklovers-1ca99/firestore/indexes?create_composite=Ck5wcm9qZWN0cy9ib29rbG92ZXJzLTFjYTk5L2RhdGFiYXNlcy8oZGVmYXVsdCkvY29sbGVjdGlvbkdyb3Vwcy9ib29rcy9pbmRleGVzL18QARoLCgd1c2VyX2lkEAEaDgoKY3JlYXRlZF9hdBACGgwKCF9fbmFtZV9fEAI',
+  metadata: Metadata {
+    internalRepr: Map(1) { 'x-debug-tracking-id' => [Array] },
+    options: {}
+  },
+  note: 'Exception occurred in retry method that was not classified as transient'
+}
+
+https://github.com/phptuts/booklovers/commit/4c8ff7faa11bdc2b1c45898cf258c9c3913b51ec
+
+```
+
+copy and open to new browser (need logic firebase account)
+
+```sh
+https://console.firebase.google.com/v1/r/project/booklovers-1ca99/firestore/indexes?create_composite=Ck5wcm9qZWN0cy9ib29rbG92ZXJzLTFjYTk5L2RhdGFiYXNlcy8oZGVmYXVsdCkvY29sbGVjdGlvbkdyb3Vwcy9ib29rcy9pbmRleGVzL18QARoLCgd1c2VyX2lkEAEaDgoKY3JlYXRlZF9hdBACGgwKCF9fbmFtZV9fEAI
+```
+
+![alt text](https://github.com/EKI-INDRADI/eki-rnd-svelte-sveltekit-2023-part-2/blob/EKI-20240614-087-My-Book/EKI-20240614-087-My-Book.png?raw=true)
+
+![alt text](https://github.com/EKI-INDRADI/eki-rnd-svelte-sveltekit-2023-part-2/blob/EKI-20240614-087-My-Book/EKI-20240614-087-My-Book_2.png?raw=true)
+
+wait in minutes , if still eror re-try copy and paste url to new browser and save
+
+```sh
+https://console.firebase.google.com/v1/r/project/booklovers-1ca99/firestore/indexes?create_composite=Ck5wcm9qZWN0cy9ib29rbG92ZXJzLTFjYTk5L2RhdGFiYXNlcy8oZGVmYXVsdCkvY29sbGVjdGlvbkdyb3Vwcy9ib29rcy9pbmRleGVzL18QARoLCgd1c2VyX2lkEAEaDgoKY3JlYXRlZF9hdBACGgwKCF9fbmFtZV9fEAI
+```
+
+![alt text](https://github.com/EKI-INDRADI/eki-rnd-svelte-sveltekit-2023-part-2/blob/EKI-20240614-087-My-Book/EKI-20240614-087-My-Book_3.png?raw=true)
+
+
+</details>
+
+
 ## EKI INDRADI
 
 "TIME > KNOWLEDGE > MONEY". #2024_3_DIGIT_MOTIVATION
