@@ -1115,6 +1115,16 @@ https://console.firebase.google.com/v1/r/project/booklovers-1ca99/firestore/inde
 </details>
 
 
+<details>
+  <summary>EKI-20240618-088-Fix-Book-Link</summary>
+
+ update booklovers\src\lib\components\Books\Book.svelte goToBookPage
+
+</details>
+
+
+
+
 ## EKI INDRADI
 
 "TIME > KNOWLEDGE > MONEY". #2024_3_DIGIT_MOTIVATION
