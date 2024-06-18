@@ -1122,7 +1122,15 @@ https://console.firebase.google.com/v1/r/project/booklovers-1ca99/firestore/inde
 
 </details>
 
+<details>
+  <summary>EKI-20240618-089-Favorite-Books</summary>
 
+  update booklovers\src\lib\firebase\database.server.js getLikedBooks
+  create booklovers\src\routes\profile\favorites\+page.server.js
+  update booklovers\src\routes\profile\favorites\+page.svelte
+  update booklovers\src\lib\components\Books\Like.svelte stopPropagation
+
+</details>
 
 
 ## EKI INDRADI
