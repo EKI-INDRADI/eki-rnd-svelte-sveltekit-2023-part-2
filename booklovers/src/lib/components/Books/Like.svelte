@@ -7,15 +7,17 @@
 	export let textAlign = 'left';
 	let submitting = false;
 
-	async function toggleLike() {
-
+	async function toggleLike(e) {
+		//============= BUG FIX LIKE NOT CLICK DETAIL
+		// e.stopPropagation();
+		// FIX BY 		on:click|stopPropagation={toggleLike}
+		//============= BUG FIX LIKE NOT CLICK DETAIL
 
 		//=========== BUG FIX LIKE UNDEFINED ===========
 		if (!$authStore.isLoggedIn) {
 			return;
 		}
 		//=========== BUG FIX LIKE UNDEFINED ===========
-
 
 		try {
 			submitting = true;
@@ -32,8 +34,8 @@
 <div style="text-align: {textAlign}" class="like">
 	<!--  TOGGLING -->
 	{#if submitting}
-	<img src="/loading.gif" alt="" />
-	<!--  LIKE -->
+		<img src="/loading.gif" alt="" />
+		<!--  LIKE -->
 	{:else if book.likedBook}
 		<span>{book.likes}</span>
 		<!-- svelte-ignore missing-declaration -->
@@ -45,7 +47,7 @@
 			fill="currentColor"
 			class="bi bi-arrow-through-heart-fill"
 			viewBox="0 0 16 16"
-			on:click={toggleLike}
+			on:click|stopPropagation={toggleLike}
 			class:not-logged-in={!$authStore.isLoggedIn}
 		>
 			<path
@@ -64,7 +66,7 @@
 			fill="currentColor"
 			class="bi bi-arrow-through-heart"
 			viewBox="0 0 16 16"
-			on:click={toggleLike}
+			on:click|stopPropagation={toggleLike}
 			class:not-logged-in={!$authStore.isLoggedIn}
 		>
 			<path
