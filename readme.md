@@ -1133,6 +1133,16 @@ https://console.firebase.google.com/v1/r/project/booklovers-1ca99/firestore/inde
 </details>
 
 
+<details>
+  <summary>EKI-20240627-090-Unliking-books-on-favorites-page</summary>
+
+update booklovers\src\lib\components\Books\Like.svelte toggleLike(e)
+update booklovers\src\lib\components\Books\Book.svelte on:toggle_like
+update booklovers\src\routes\profile\favorites\+page.svelte on:toggle_like={filterUnlinkedBooks}
+
+</details>
+
+
 ## EKI INDRADI
 
 "TIME > KNOWLEDGE > MONEY". #2024_3_DIGIT_MOTIVATION

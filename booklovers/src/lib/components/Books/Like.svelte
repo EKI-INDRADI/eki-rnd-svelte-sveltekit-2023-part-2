@@ -1,6 +1,9 @@
 <script>
 	import messagesStore from '$lib/stores/messages.store';
 	import authStore from '$lib/stores/auth.store';
+	import { createEventDispatcher } from 'svelte';
+
+	const dispatch = createEventDispatcher();
 
 	export let book;
 	// tonggle Like
@@ -23,6 +26,7 @@
 			submitting = true;
 			const response = await fetch(`/like/${book.id}`);
 			book = await response.json();
+			dispatch('toggle_like', {id : book.id});
 		} catch (e) {
 			messagesStore.showError();
 		}

@@ -21,7 +21,7 @@
 		<p>
 			{book.short_description}
 		</p>
-        <Like {book}/>
+        <Like {book} on:toggle_like/>
 		<!-- REPLACE_WITH_LIKE_COMPONENT-->
 	</div>
 </div>
