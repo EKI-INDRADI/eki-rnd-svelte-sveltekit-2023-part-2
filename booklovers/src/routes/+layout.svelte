@@ -34,6 +34,13 @@ setTimeout.
 	import { sendJWTToken } from '$lib/firebase/auth.client';
 	//------------- /import firebase (auto initialized
 
+	import authStore from '$lib/stores/auth.store';
+
+	export let data;
+	let isLoggedIn = data.isLoggedIn;
+
+	$: isLoggedIn = $authStore.isActive ? $authStore.isLoggedIn : data.isLoggedIn;
+
 	let timerId;
 
 	async function sendServerToken() {
@@ -71,7 +78,7 @@ setTimeout.
 	}
 </script>
 
-<Nav />
+<Nav {isLoggedIn} />
 <!-- main.container -->
 <main class="container">
 	{#if $messagesStore.show}
