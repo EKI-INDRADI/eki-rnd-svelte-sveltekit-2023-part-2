@@ -5,11 +5,12 @@ the navbar-collapse when the navba-toggler button is clicked
 
 <script>
 	import { page } from '$app/stores';
-	import authStore from '$lib/stores/auth.store';
+	// import authStore from '$lib/stores/auth.store';
 	import { logout } from '$lib/firebase/auth.client';
 	import messagesStore from '$lib/stores/messages.store';
 	import { goto } from '$app/navigation';
-	// let isLoggedIn = false; // true;
+
+	export let isLoggedIn; //= false; // true;
 	let isOpen = false;
 	function toggleMenu() {
 		isOpen = !isOpen;
@@ -54,7 +55,7 @@ the navbar-collapse when the navba-toggler button is clicked
 		<div class:show={isOpen} class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav">
 				<!-- {#if isLoggedIn} -->
-				{#if $authStore.isLoggedIn}
+				{#if isLoggedIn}
 					<!-- Logged In -->
 					<li class="nav-item">
 						<a

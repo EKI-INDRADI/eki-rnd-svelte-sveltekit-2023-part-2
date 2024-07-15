@@ -1142,6 +1142,21 @@ update booklovers\src\routes\profile\favorites\+page.svelte on:toggle_like={filt
 
 </details>
 
+<details>
+  <summary>EKI-20240715-091-SSR-Menu</summary>
+
+fix menu refresh (flicker) logout/login
+
+
+create booklovers\src\routes\+layout.server.js
+update booklovers\src\routes\+layout.svelte ref booklovers\src\lib\stores\auth.store.js
+update booklovers\src\lib\components\Nav.svelte
+
+
+fix menu without refresh (flicker) logout/login
+
+</details>
+
 
 ## EKI INDRADI
 
