@@ -1158,6 +1158,77 @@ fix menu without refresh (flicker) logout/login
 </details>
 
 
+<details>
+  <summary>EKI-20240715-092-Real-Time-New-Book-Alerts</summary>
+
+https://github.com/phptuts/booklovers
+
+37 - Notify new book alert
+
+https://github.com/phptuts/booklovers/commit/1222cba1250445e36a5b47c281015c82cbeab8ae
+
+
+copy to booklovers\src\routes\+layout.svelte
+update booklovers\src\routes\+layout.svelte  (after sloth)
+
+```html
+<div
+		class="toast show position-fixed top-0 end-0 m-3"
+		role="alert"
+		aria-live="assertive"
+		aria-atomic="true"
+	>
+		<div class="toast-header">
+			<strong class="me-auto">New Book</strong>
+			<button
+				type="button"
+				class="btn-close"
+				data-bs-dismiss="toast"
+				aria-label="Close"
+			/>
+		</div>
+		<div class="toast-body">
+			Book <a href="/book/REPLACE_ID">REPLACE_TITLE</a> just created!!
+		</div>
+	</div>
+```
+
+https://console.firebase.google.com/ -> firebase database -> rules ->
+
+```sh
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{userId}{
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+#---------------this update
+    match /books/{bookId} {
+      allow read: if true;
+      allow write: if false;
+    }
+#---------------this update
+  
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
+```
+
+publish
+
+
+create booklovers\src\lib\stores\book-notify.store.js ref booklovers\src\lib\firebase\firebase.client.js
+
+
+update booklovers\src\routes\+layout.svelte
+
+</details>
+
+
 ## EKI INDRADI
 
 "TIME > KNOWLEDGE > MONEY". #2024_3_DIGIT_MOTIVATION
