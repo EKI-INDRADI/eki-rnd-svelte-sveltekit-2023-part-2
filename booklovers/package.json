@@ -26,5 +26,8 @@
 		"vite": "^4.4.2",
 		"yup": "^1.4.0"
 	},
-	"type": "module"
+	"type": "module",
+	"engines": {
+		"node": "18.x"
+	}
 }

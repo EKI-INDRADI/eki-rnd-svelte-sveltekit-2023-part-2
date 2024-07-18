@@ -1303,6 +1303,23 @@ deploy to vercel ready
 
 </details>
 
+<details>
+  <summary>EKI-20240718-094-Deploying-to-Vercel-Nodejs-18</summary>
+
+https://vercel.com/changelog/node-js-version-now-customizable-in-the-project-settings
+https://vercel.com/docs/functions/runtimes/node-js/node-js-versions
+
+package.jso
+```json
+{
+  "engines": {
+    "node": "18.x"
+  }
+}
+```
+
+
+</details>
 
 
 
