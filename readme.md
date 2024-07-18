@@ -1309,7 +1309,7 @@ deploy to vercel ready
 https://vercel.com/changelog/node-js-version-now-customizable-in-the-project-settings
 https://vercel.com/docs/functions/runtimes/node-js/node-js-versions
 
-package.jso
+package.json
 ```json
 {
   "engines": {
