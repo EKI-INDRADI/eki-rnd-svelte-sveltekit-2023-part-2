@@ -17,7 +17,7 @@ export default readable(null, (set) => {
     })
 
     return () => {
-        console.log('unsub');
+        // console.log('unsub');
         unsub();
     }
 })
