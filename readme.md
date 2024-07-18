@@ -1322,6 +1322,26 @@ package.json
 </details>
 
 
+<details>
+  <summary>EKI-20240718-095-Deploying-to-Vercel-firebase-permission</summary>
+
+https://console.firebase.google.com/
+
+
+firebase unauthorized domain
+
+https://console.firebase.google.com/ -> booklovers -> authentication -> settings -> authorized domains -> add domain
+
+eki-rnd-svelte-sveltekit-2023-part-2.vercel.app
+
+eki-rnd-svelte-sveltekit-2023-part-2-hb2cii7kv.vercel.app
+
+
+</details>
+
+
+
+
 
 ## EKI INDRADI
 
